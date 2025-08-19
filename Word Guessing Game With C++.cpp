@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-//Credit: Anik Roy
 
 void lifeDisplay(int &chances) {
     cout<<"Life: ";
@@ -10,7 +9,9 @@ void lifeDisplay(int &chances) {
     cout<<endl;
 }
 
-void winner(bool &flag) {
+void winner(bool &flag,string str) {
+    cout<<"\n==============> Correct! <=============="<<endl;
+    cout<<"\nThe Word is: "<<str<<endl;
     cout<<"\n**********************************"<<endl;
     cout<<"========> Winner Winner <========="<<endl;
     cout<<"======>  Chicken Dinner! <========"<<endl;
@@ -141,7 +142,7 @@ int main()
             else if((ch>='A' && ch<='Z')||(ch>='a' && ch<='z')) {
                 check(ch,str,wordsLib,wordIndex,chances);
                 if(count(str.begin(),str.end(),'_')==0) {
-                    winner(flag);
+                    winner(flag,wordsLib[wordIndex].first);
                 }
             }
         }
